@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { RouterProvider } from 'react-router-dom';
+import { appRoutes } from './routes';
+import { useDispatch } from 'react-redux';
+import { setUserToken, setCurrentUser } from './redux/slices';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const dispatch = useDispatch();
+	React.useEffect(() => {
+		const user = localStorage.getItem('user');
+		const token = localStorage.getItem('crud_token');
+		if (user && token) {
+			dispatch(setUserToken(token));
+			dispatch(setCurrentUser(JSON.parse(user)));
+		}
+	}, [dispatch]);
+	return <RouterProvider router={appRoutes} />;
 }
 
 export default App;
