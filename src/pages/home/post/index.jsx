@@ -54,7 +54,6 @@ export const Post = () => {
 		}
 	}, [dispatch, id]);
 	React.useEffect(() => {
-		console.log({ post });
 		if (post) {
 			Object.keys(post || {})?.forEach((key) => {
 				form.setFieldValue(key, post[key]);

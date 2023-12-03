@@ -17,7 +17,6 @@ export const Home = () => {
 	const busy = useSelector(loading);
 	const type = useSelector(status);
 	const content = useSelector(errorMessage);
-	console.log({ data });
 	React.useEffect(() => {
 		dispatch(getAllUserPostRequest());
 	}, [dispatch]);

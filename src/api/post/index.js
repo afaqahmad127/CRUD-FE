@@ -53,7 +53,6 @@ export const getPostById = (id) => {
 		};
 		MyAxios(config)
 			.then(function (response) {
-				console.log(response.data);
 				resolve(response.data);
 			})
 			.catch(function (error) {
@@ -77,7 +76,6 @@ export const updatePostById = (id, { body }) => {
 		};
 		MyAxios(config)
 			.then(function (response) {
-				console.log(response.data);
 				resolve(response.data);
 			})
 			.catch(function (error) {
@@ -96,7 +94,6 @@ export const deletePostById = (id) => {
 		};
 		MyAxios(config)
 			.then(function (response) {
-				console.log(response.data);
 				resolve(response.data);
 			})
 			.catch(function (error) {

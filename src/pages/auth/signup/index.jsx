@@ -23,7 +23,6 @@ export const SignUp = () => {
 				content,
 			});
 	}, [content, messageApi, type]);
-	console.log({ busy });
 	return (
 		<div
 			style={{
